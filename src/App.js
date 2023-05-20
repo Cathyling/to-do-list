@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState } from "react";
+import NewTask from "./components/NewTask";
+import Task from "./components/Task";
+import { nanoid } from "nanoid";
 
-function App() {
+function App(props) {
+  const [tasks, setTasks] = useState([]);
+  const addTodo = (name) => {
+    const task = { id: nanoid(), name: name, completed: false };
+    setTasks([...tasks, task]);
+  };
+  const toggleCompleted = (id) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    );
+    setTasks(updatedTasks);
+  };
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+  const editTask = (id, name) => {
+    setTasks(
+      tasks.map((task) => (task.id === id ? { ...task, name: name } : task))
+    );
+  };
+  const tasksList = tasks.map((task, index) => (
+    <Task
+      key={index}
+      id={task.id}
+      name={task.name}
+      isCompleted={props.completed}
+      toggleCompleted={toggleCompleted}
+      deleteTask={deleteTask}
+      editTask={editTask}
+    />
+  ));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="to-do-list">
+      <header className="title">To Do List</header>
+      <NewTask addTodo={addTodo} />
+      {tasks.length > 0 && <div className="items">{tasksList}</div>}
     </div>
   );
 }

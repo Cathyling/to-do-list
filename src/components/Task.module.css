@@ -1,0 +1,56 @@
+.task {
+  background-color: rgb(247, 241, 232);
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task input[type="checkbox"] {
+  display: block;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.task-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-content label {
+  display: block;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
+.btn {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #8fbc8f;
+}
+
+.editting-form {
+  display: flex;
+  margin-top: 5px;
+}
+
+.editting-form input[type="text"] {
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+  height: 3rem;
+}
+
+.editting-form button {
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #5496f4;
+}
