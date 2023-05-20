@@ -20,13 +20,13 @@ A simple to-do list web application created with React.
 
 ### Prerequisites
 
-To run this app you need to have [Node.js](https://nodejs.org/en/download) installed on your local environment.
+To run this app, you need to have [Node.js](https://nodejs.org/en/download) installed on your local environment.
 
 ### Installation
 
 #### Clone this project
 
-In the terminal, run the following command:
+In the terminal, run the following command:  
 `git clone https://github.com/Cathyling/to-do-list.git`
 
 #### Navigate to the project directory
