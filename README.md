@@ -1,20 +1,44 @@
-# Getting Started with Create React App
+# To Do List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple to-do list web application created with React.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Create new task
+- Mark up completed tasks
+- Update, or delete exsitng tasks from the to-do list
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- Node.js
+- Visual Studio Code
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Live Demo](https://cathyling.github.io/to-do-list/)
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+
+To run this app you need to have [Node.js](https://nodejs.org/en/download) installed on your local environment.
+
+### Installation
+
+#### Clone this project
+
+In the terminal, run the following command:
+`git clone https://github.com/Cathyling/to-do-list.git`
+
+#### Navigate to the project directory
+
+`cd to-do-list`
+
+#### Install dependencies
+
+`npm install`
+
+#### Run the project
+
+`npm start`
+
+Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
