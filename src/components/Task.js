@@ -48,7 +48,9 @@ const Task = (props) => {
           defaultChecked={props.isCompleted}
           onChange={() => props.toggleCompleted(props.id)}
         />
-        <label htmlFor={props.id}>{props.name}</label>
+        <label htmlFor={props.id}>
+          <p>{props.name}</p>
+        </label>
       </div>
       <div className={classes.btns}>
         <FontAwesomeIcon

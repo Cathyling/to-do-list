@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import NewTask from "./components/NewTask";
 import Task from "./components/Task";
 import { nanoid } from "nanoid";
 
 function App(props) {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    // get stored tasks
+    const savedTasks = localStorage.getItem("tasks");
+    const initialValue = JSON.parse(savedTasks);
+    return initialValue || [];
+  });
   const addTodo = (name) => {
     const task = { id: nanoid(), name: name, completed: false };
     setTasks([...tasks, task]);
@@ -24,6 +29,11 @@ function App(props) {
       tasks.map((task) => (task.id === id ? { ...task, name: name } : task))
     );
   };
+  // store todo items in localstorage
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const tasksList = tasks.map((task, index) => (
     <Task
       key={index}

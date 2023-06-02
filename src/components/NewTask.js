@@ -11,6 +11,9 @@ const NewTask = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (newTask.length === 0) {
+      return;
+    }
     props.addTodo(newTask);
     setNewTask("");
   };

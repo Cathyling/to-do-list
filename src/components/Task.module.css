@@ -22,9 +22,10 @@
 }
 
 .task-content label {
-  display: block;
+  display: inline-block;
   font-size: 1.2rem;
   margin-left: 1rem;
+  width: 100%;
 }
 .btn {
   margin-left: 1rem;
